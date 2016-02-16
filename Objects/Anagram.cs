@@ -5,6 +5,7 @@ namespace AnagramNS.Objects
   public class Anagram
   {
     private string _mainWord;
+    private Dictionary<string,bool> _outputList;
 
     public Anagram(string MainWord)
     {
@@ -13,6 +14,10 @@ namespace AnagramNS.Objects
     public string GetMainWord()
     {
       return _mainWord;
+    }
+    public Dictionary<string,bool> GetOutput()
+    {
+      return _outputList;
     }
     public void SetMainWord(string MainWord)
     {
@@ -40,7 +45,7 @@ namespace AnagramNS.Objects
 
       // iteration with foreach
       foreach(string test in testList) {
-        output.Add(test, IsAnagram(test));
+        output.Add(test, IsPartialAnagram(test));
       }
 
       // iteration with for loop
@@ -77,6 +82,10 @@ namespace AnagramNS.Objects
       Array.Sort(test);
       string testOutput = String.Join("", test); // join into a string
       return testOutput.Trim().Length <= 0; // count the string after Trim() off whitespace
+    }
+    public void StoreOutput(Dictionary<string,bool> anagramList)
+    {
+      _outputList = anagramList;
     }
 
 

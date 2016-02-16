@@ -1,0 +1,7 @@
+@Html.Partial("header.cshtml")
+
+<form action="/anagram" method="post">
+  <label for="MainWord">Enter word to check anagrams against:</label><input type="text" name="MainWord" autofocus>
+  <label for="WordList">Enter a list of words to see if they are anagrams, separated by a space</label><input type="text" name="WordList" placeholder="Separate Entries by a Space">
+  <input type="submit" name="submit" value="Check for Anagrams">
+</form>

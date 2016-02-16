@@ -1,0 +1,10 @@
+@Html.Partial("header.cshtml")
+
+<h1>Anagrams for: @Model.GetMainWord()</h1>
+<table>
+  @foreach(var item in Model.GetOutput()) {
+    <tr><td>@item.Value</td><td> @item.Key</td> </tr>
+  }
+</table>
+
+<a href="/">Try a new list!</a>
